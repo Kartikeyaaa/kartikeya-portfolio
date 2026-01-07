@@ -6,70 +6,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #111827;
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-      background-color: #0b0b0b;
-      color: #e5e7eb;
-      line-height: 1.6;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     header {
+      padding: 110px 20px 90px;
       text-align: center;
-      padding: 90px 20px;
-      border-bottom: 1px solid #1f2937;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at top, #111827, #0a0a0a);
     }
 
     header h1 {
-      font-size: 44px;
-      margin-bottom: 12px;
+      font-size: 48px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
     }
 
     header p {
-      color: #9ca3af;
+      color: var(--muted);
       font-size: 18px;
       margin: 6px 0;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 22px;
-      padding: 12px 22px;
-      border: 1px solid #374151;
-      border-radius: 6px;
-      color: #e5e7eb;
+      margin-top: 28px;
+      padding: 14px 26px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn:hover {
-      background-color: #1f2937;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(96,165,250,0.25);
     }
 
     section {
-      max-width: 960px;
+      max-width: 1100px;
       margin: auto;
-      padding: 70px 20px;
-      border-bottom: 1px solid #1f2937;
+      padding: 90px 24px;
     }
 
     h2 {
-      font-size: 30px;
-      margin-bottom: 24px;
+      font-size: 32px;
+      margin-bottom: 40px;
+      letter-spacing: 0.4px;
     }
 
-    h3 {
-      margin-bottom: 6px;
+    .grid {
+      display: grid;
+      gap: 28px;
     }
 
-    .sub {
-      color: #9ca3af;
-      font-size: 14px;
-      margin-bottom: 12px;
+    .two {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.15s ease, border 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #374151;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 15px;
     }
 
     ul {
-      margin-left: 22px;
+      padding-left: 18px;
+      margin: 12px 0 0;
     }
 
     li {
@@ -78,9 +117,14 @@
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 40px 20px;
       color: #6b7280;
-      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
   </style>
 </head>
@@ -89,10 +133,9 @@
 
 <header>
   <h1>Kartikeya Kunwar</h1>
-  <p>Cybersecurity Fresher | Junior Penetration Tester</p>
+  <p>Cybersecurity Fresher • Junior Penetration Tester</p>
   <p>Gurugram, India</p>
 
-  <!-- Resume Button -->
   <a class="btn" href="KartikeyaKunwar.pdf" target="_blank">
     Download Resume
   </a>
@@ -100,108 +143,150 @@
 
 <section>
   <h2>About Me</h2>
-  <p>
-    I am a cybersecurity fresher with hands-on exposure to enterprise security,
-    governance, and penetration testing fundamentals. Through consulting and
-    internship experience, I have worked on identifying security risks, validating
-    controls, and supporting secure system design in regulated environments.
-    I am particularly interested in learning how real-world systems are attacked,
-    defended, and improved from a security perspective.
-  </p>
+
+  <div class="card">
+    <p>
+      I am a cybersecurity graduate with a strong interest in understanding how modern
+      systems are attacked, defended, and continuously improved. My exposure spans
+      enterprise security consulting, governance and control validation, and hands-on
+      penetration testing fundamentals.
+    </p>
+    <p>
+      Through consulting roles and structured certifications, I have developed a solid
+      foundation in security tooling, attacker techniques, governance frameworks, and
+      real-world security operations. I approach cybersecurity with a practical and
+      detail-oriented mindset — focusing on identifying weaknesses, understanding impact,
+      and strengthening security posture.
+    </p>
+    <p>
+      My work has also been recognized academically, with a computer vision–based face
+      detection project published by Springer, Singapore.
+    </p>
+  </div>
 </section>
 
 <section>
   <h2>Professional Experience</h2>
 
-  <h3>KPMG – Digital Trust</h3>
-  <p class="sub">Analyst | Jun 2025 – Sep 2025</p>
-  <ul>
-    <li>Supported security and control testing activities across enterprise applications using ServiceNow</li>
-    <li>Worked with ServiceNow GRC to map risks, automate control testing, and track remediation status</li>
-    <li>Assisted in preparing risk registers, compliance matrices, and audit-support documentation</li>
-    <li>Collaborated with senior consultants to support internal audits and security assessments</li>
-    <li>Gained hands-on exposure to enterprise IT security, internal controls, and regulatory compliance</li>
-  </ul>
+  <div class="grid two">
+    <div class="card">
+      <h3>KPMG – Digital Trust</h3>
+      <p class="muted">Analyst • Jun 2025 – Sep 2025</p>
+      <ul>
+        <li>Worked on security and control testing across enterprise applications</li>
+        <li>Used ServiceNow GRC to map risks, track controls, and monitor remediation</li>
+        <li>Supported preparation of audit-ready security and compliance documentation</li>
+        <li>Assisted in internal audits and IT security assessments</li>
+        <li>Gained exposure to enterprise security governance and regulated environments</li>
+      </ul>
+    </div>
 
-  <br />
-
-  <h3>Forvis Mazars – Strategy, Digital & Technology Consulting</h3>
-  <p class="sub">Intern | Aug 2023 – Nov 2023</p>
-  <ul>
-    <li>Developed and updated ISO 27001:2013-aligned information security policies for multiple clients</li>
-    <li>Mapped legal and regulatory requirements to security controls across different jurisdictions</li>
-    <li>Supported PCI DSS implementation to improve protection of cardholder data</li>
-    <li>Conducted gap assessments to identify control weaknesses and improvement areas</li>
-    <li>Assisted in aligning SEBI requirements with internal security documentation</li>
-    <li>Worked alongside teams supporting cloud and IT security initiatives (AWS & Azure exposure)</li>
-  </ul>
+    <div class="card">
+      <h3>Forvis Mazars – Strategy & Technology Consulting</h3>
+      <p class="muted">Intern • Aug 2023 – Nov 2023</p>
+      <ul>
+        <li>Developed and reviewed ISO 27001-aligned information security policies</li>
+        <li>Mapped legal and regulatory requirements to security controls</li>
+        <li>Supported PCI DSS initiatives for secure handling of cardholder data</li>
+        <li>Performed gap assessments to identify security and compliance gaps</li>
+        <li>Assisted teams working on IT and cloud security initiatives</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section>
-  <h2>Certifications & Practical Learning</h2>
+  <h2>Certifications & Learning</h2>
 
-  <h3>Junior Penetration Tester (eJPT)</h3>
-  <ul>
-    <li>Hands-on training in network and web application penetration testing fundamentals</li>
-    <li>Worked with tools such as Nmap, Burp Suite, Metasploit, Hydra, and basic Linux utilities</li>
-    <li>Practiced reconnaissance, scanning, exploitation basics, and reporting findings</li>
-    <li>Built a strong foundation in attacker mindset and security weaknesses</li>
-  </ul>
+  <div class="grid two">
+    <div class="card">
+      <h3>Junior Penetration Tester (eJPT)</h3>
+      <ul>
+        <li>Hands-on network and web application penetration testing fundamentals</li>
+        <li>Tools: Nmap, Burp Suite, Metasploit, Hydra, Linux utilities</li>
+        <li>Reconnaissance, scanning, exploitation basics, and reporting</li>
+        <li>Developed attacker mindset and vulnerability analysis skills</li>
+      </ul>
+    </div>
 
-  <br />
+    <div class="card">
+      <h3>Google Cybersecurity Certificate</h3>
+      <ul>
+        <li>Security monitoring, threat identification, and incident response concepts</li>
+        <li>SIEM fundamentals, log analysis, and alert investigation</li>
+        <li>Linux, SQL, Python basics for security operations</li>
+        <li>Security frameworks, risk management, and best practices</li>
+      </ul>
+    </div>
 
-  <h3>Google Cybersecurity Certificate</h3>
-  <ul>
-    <li>Developed a strong understanding of core cybersecurity concepts and frameworks</li>
-    <li>Hands-on exposure to SIEM concepts, log analysis, and incident response fundamentals</li>
-    <li>Learned security monitoring, threat identification, and basic digital forensics</li>
-    <li>Worked with tools and concepts such as Linux, SQL, Python, and security best practices</li>
-  </ul>
+    <div class="card">
+      <h3>Master Digital Transformation (Pursuing)</h3>
+      <p class="muted">LinkedIn Learning</p>
+      <ul>
+        <li>Digital risk management and secure technology adoption</li>
+        <li>Understanding cloud, data, and platform security considerations</li>
+        <li>Technology-driven business transformation</li>
+        <li>Cyber risk awareness in modern digital ecosystems</li>
+      </ul>
+    </div>
 
-  <br />
-
-  <h3>Other Certifications</h3>
-  <ul>
-    <li>Certified Ethical Hacker (CEH)</li>
-    <li>ServiceNow Certified System Administrator</li>
-  </ul>
+    <div class="card">
+      <h3>Additional Certifications</h3>
+      <ul>
+        <li>Certified Ethical Hacker (CEH)</li>
+        <li>ServiceNow Certified System Administrator</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section>
-  <h2>Technical Skills</h2>
-  <ul>
-    <li>Cybersecurity Fundamentals & Security Concepts</li>
-    <li>Penetration Testing Basics & Vulnerability Assessment</li>
-    <li>Risk Assessment & Security Governance</li>
-    <li>ISO 27001, PCI DSS Awareness</li>
-    <li>ServiceNow GRC & Control Testing</li>
-    <li>Python, C, C++, SQL</li>
-    <li>Linux Basics & Networking Fundamentals</li>
-    <li>Cloud Security Fundamentals (AWS, Azure)</li>
-  </ul>
+  <h2>Technical Skills & Tools</h2>
+
+  <div class="card">
+    <ul>
+      <li>Penetration Testing Fundamentals & Vulnerability Assessment</li>
+      <li>Security Tools: Nmap, Burp Suite, Metasploit, ServiceNow GRC</li>
+      <li>Risk Assessment, Control Testing, Security Documentation</li>
+      <li>ISO 27001 & PCI DSS Awareness</li>
+      <li>Linux Fundamentals & Networking Basics</li>
+      <li>Python, C, C++, SQL</li>
+      <li>Cloud Security Fundamentals (AWS & Azure)</li>
+    </ul>
+  </div>
 </section>
 
 <section>
   <h2>Projects</h2>
-  <ul>
-    <li>
-      <b>Face Detection using Arduino & Computer Vision:</b>
-      Built a real-time facial recognition system, optimized for accuracy under
-      varying lighting conditions.
-    </li>
-    <li>
-      <b>Automated Attendance System using Raspberry Pi:</b>
-      Developed a facial recognition-based attendance solution to reduce manual
-      errors and improve efficiency.
-    </li>
-  </ul>
+
+  <div class="grid two">
+    <div class="card">
+      <h3>Face Detection using Arduino & Computer Vision</h3>
+      <p class="muted">
+        Designed and implemented a real-time facial recognition system using Arduino
+        and computer vision techniques, optimized for accuracy across varying lighting
+        conditions. This work has been published by Springer, Singapore, highlighting
+        its academic and practical relevance.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Automated Attendance System using Raspberry Pi</h3>
+      <p class="muted">
+        Developed a facial recognition-based attendance solution to reduce manual
+        errors and improve operational efficiency.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section>
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:Kartikeya.kunwar@gmail.com">Kartikeya.kunwar@gmail.com</a></p>
-  <p>Location: Gurugram, India</p>
-  <p>Phone: +91 9990099423 </p>
+  <div class="card">
+    <p>Email: <a href="mailto:Kartikeya.kunwar@gmail.com">Kartikeya.kunwar@gmail.com</a></p>
+    <p>Location: Gurugram, India</p>
+    <p>Phone: +919990099423 </p>
+  </div>
 </section>
 
 <footer>
